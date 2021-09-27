@@ -26,10 +26,10 @@ public class InforGain {
                 counts.put(c, count+1.0);
             }
         }
-        //求信息熵
+
         int arrLength = arrStr.length;
         Double result = 0.0;
-        //遍历Map输出
+        //遍历Map求求信息熵
         for(Map.Entry<Character, Double> entry:counts.entrySet()) {
             Double p = entry.getValue()/arrLength;
             result += p*(Math.log(p) / Math.log(2));
@@ -39,6 +39,5 @@ public class InforGain {
         NumberFormat nf = NumberFormat.getNumberInstance();
         nf.setMaximumFractionDigits(2);
         System.out.println(nf.format(result));
-        System.out.println(result);
     }
 }
